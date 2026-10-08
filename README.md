@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Status:** problem brief. The question and the measurement are written here. An implementation is not in this repository yet.
+**Status:** runnable on designed examples. Not a clinical system, a LIMS, or a trained model.
 
 </div>
 
@@ -18,7 +18,7 @@
   <img src="docs/demo.gif" alt="edit-outcome" width="880"/>
 </p>
 
-The clip plays on this page. [Full video](docs/demo.mp4).
+The clip is `python -m edit_outcome`, the program in this repository. [Full video](docs/demo.mp4).
 
 ## The problem
 
@@ -41,7 +41,17 @@ A leaderboard accuracy with no calibration plot is not this result. A demo that 
 
 ## What this repository is
 
-The prediction question for base and prime editing, stated so a later model can be judged against it. Related writing on what methods sections actually report lives in [methods-audit](https://github.com/TechieGoku2623/methods-audit). This repository does not ship a trained editor model.
+`edit-outcome` bins predicted shares against observed outcomes after a cut year. It does not ship a trained editor model. Methods-section checks live in [methods-audit](https://github.com/TechieGoku2623/methods-audit).
+
+## Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m edit_outcome
+python -m unittest discover -s tests -v
+```
 
 ## Author
 

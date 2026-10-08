@@ -15,10 +15,10 @@
 ## Watch
 
 <p align="center">
-  <img src="docs/demo.gif" alt="edit-outcome" width="880"/>
+  <img src="docs/demo.gif" alt="edit-outcome: calibration bins, then held-out calls including an abstention" width="880"/>
 </p>
 
-The clip is `python -m edit_outcome`, the program in this repository. [Full video](docs/demo.mp4).
+The clip is the working screen: calibration bins, then the held-out calls. [Open the demo](docs/demo.html). [Full video](docs/demo.mp4).
 
 ## The problem
 

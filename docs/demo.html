@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>edit-outcome</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #1c0e16; color: #ffecf2; font-family: Inter, system-ui, sans-serif; }
+  body { padding: 28px 36px; }
+  header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 18px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.04em; }
+  header p { margin: 0; color: #e0b0c4; }
+  .bins, .calls { display: grid; gap: 12px; }
+  .bins { grid-template-columns: repeat(3, 1fr); margin-bottom: 18px; }
+  .bin, .call { background: #2a1420; border: 1px solid #5a3048; border-radius: 16px; padding: 16px 18px; opacity: 0; transform: translateY(8px); transition: 0.4s ease; }
+  .bin.show, .call.show { opacity: 1; transform: none; }
+  .k { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #ff7a9c; }
+  .n { font-size: 28px; margin-top: 8px; }
+  .call { display: grid; grid-template-columns: 80px 1fr 1fr 160px; align-items: center; font-size: 18px; }
+  .abstain { color: #ffd0a8; }
+  .miss { color: #ff8f86; }
+</style>
+</head>
+<body>
+<header>
+  <h1>edit-outcome</h1>
+  <p>Cut year 2022. Held-out rows only. Not a trained editor.</p>
+</header>
+<section class="bins">
+  <article class="bin" id="b1"><div class="k">predicted intended 0.0–0.4</div><div class="n">n = 1 · observed 0.0</div></article>
+  <article class="bin" id="b2"><div class="k">predicted intended 0.4–0.7</div><div class="n">n = 0 · observed n/a</div></article>
+  <article class="bin" id="b3"><div class="k">predicted intended 0.7–1.0</div><div class="n">n = 2 · observed 0.0</div></article>
+</section>
+<section class="calls">
+  <article class="call" id="c1"><b>2023</b><span>decision intended</span><span class="miss">observed unchanged</span><span>call d</span></article>
+  <article class="call" id="c2"><b>2024</b><span>decision intended</span><span class="miss">observed indel</span><span>call e</span></article>
+  <article class="call" id="c3"><b>2024</b><span class="abstain">decision abstain</span><span>observed bystander</span><span>call f · share under 0.5</span></article>
+</section>
+<script>
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+async function play() {
+  await wait(700);
+  for (const id of ["b1", "b2", "b3", "c1", "c2", "c3"]) {
+    document.getElementById(id).classList.add("show");
+    await wait(550);
+  }
+}
+</script>
+</body>
+</html>

@@ -12,6 +12,14 @@
 
 ---
 
+## Watch
+
+<p align="center">
+  <img src="docs/demo.gif" alt="edit-outcome" width="880"/>
+</p>
+
+The clip plays on this page. [Full video](docs/demo.mp4).
+
 ## The problem
 
 Base editors and prime editors do not have one outcome. A target can become the intended allele, a bystander edit, an indel, or unchanged. A single "efficiency" number hides that mix, and a high score gets treated as a certainty it never earned.
